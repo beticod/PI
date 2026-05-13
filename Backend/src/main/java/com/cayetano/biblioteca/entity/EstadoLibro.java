@@ -15,7 +15,14 @@ public class EstadoLibro {
     @Column(name = "id_estado")
     private Long idEstado;
 
-    // LEIDO, LEYENDO, PENDIENTE
-    @Column(nullable = false)
+    @Column(name = "estado_fijo")
+    private Long idEstadoFijo;
+
     private String descripcion;
+
+    // Constructor útil para DataLoader (sin id autogenerado)
+    public EstadoLibro(Long idEstadoFijo, String descripcion) {
+        this.idEstadoFijo = idEstadoFijo;
+        this.descripcion = descripcion;
+    }
 }
